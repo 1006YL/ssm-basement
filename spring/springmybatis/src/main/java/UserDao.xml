@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserDao">
+    <select id="selectUser" resultType="hello">
+    select * from user
+   </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into user (id,name,password) values (#{id},#{name},#{password})
+    </insert>
+
+    <delete id="deleterUser" parameterType="User">
+        delete from user where id=#{id};
+   </delete>
+
+    <update id="updateUser" parameterType="User">
+        update user set id=#{id},name=#{name},password=#{password}  where id=5 ;
+    </update>
+
+    <select id="selectmoreUser" resultType="User" parameterType="Map">
+        select * from user where id like #{id} or name like #{name};
+    </select>
+</mapper>

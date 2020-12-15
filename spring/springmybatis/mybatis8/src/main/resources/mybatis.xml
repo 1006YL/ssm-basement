@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <properties resource="db.properties">
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </properties>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+<!--    <typeAliases>-->
+<!--        &lt;!&ndash;<package name=""/>配合@Aliases()使用&ndash;&gt;-->
+<!--        <typeAlias type="com.user.User" alias="hello"/>-->
+<!--    </typeAliases>-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--      <mapper resource="main/java/com/dao/StudentMapper.xml"/>-->
+<!--        <mapper resource="main/java/com/dao/TeacherMapper.xml"/>-->
+<!--        <package name="main.java.com.dao"/>-->
+<!--        <mapper class="com.dao.StudentMapper"/>-->
+        <mapper resource="com/dao/BlogMapper.xml"/>
+    </mappers>
+
+</configuration>

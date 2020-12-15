@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="address" class="com.Address">
+        <property name="address" value="西湖"></property>
+    </bean>
+    <bean id="student" class="com.Student">
+        <property name="name" value="小明"></property>
+        <property name="bookName">
+            <array>
+                <value>红会</value>
+                <value>红会</value>
+                <value>红会</value>
+                <value>红会</value>
+            </array>
+        </property>
+        <property name="bookList">
+            <list>
+                <value>红会</value>
+                <value>红会</value>
+                <value>红会</value>
+                <value>红会</value>
+            </list>
+        </property>
+        <property name="bookMap">
+            <map>
+                <entry key="1" value="ok"></entry>
+                <entry key="2" value="ok2"></entry>
+            </map>
+        </property>
+        <property name="bookPriorities">
+            <props>
+                <prop key="1">1234</prop>
+                <prop key="2">12345</prop>
+            </props>
+        </property>
+        <property name="bookSet">
+            <set>
+                <value>uu</value>
+                <value>uu2</value>
+            </set>
+        </property>
+    </bean>
+    <context:component-scan base-package="com"/>
+</beans>
